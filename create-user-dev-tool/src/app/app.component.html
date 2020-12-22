@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light">
+    <a class="navbar-brand" href="#">CAMBRIDGE</a>
+</nav>
+<div class="container-fluid px-0">
+  <div class="page-wrapper">
+      <section class="d-md-flex align-items-center welcome mt-0 mt-md-4">
+          <h1 class="welcome-msg">
+              Create User Page
+          </h1>                    
+      </section>
+      <section class="api-input-section mt-3">
+          <!-- Select API dropdown -->
+          <div class="dropdown api-dropdown">
+              <div aria-expanded="false" aria-haspopup="true" class="input-group mb-2 dropdown-toggle" data-toggle="dropdown">
+                  <input qid="ktp-1" class="form-control form-control-lg" id="bundleType" name="bundleType" readonly="" required="" type="text" value="{{selectedApiFromDropdown}}" placeholder="Select the API">
+                  <div class="input-group-text arrow-group-text">
+                      <i class="fa fa-caret-down"></i>
+                  </div>
+              </div>
+              <ul class="dropdown-menu" x-placement="bottom-start">
+                  <li class="dropdown-item" *ngFor="let api of apiCollection; let i = index;">
+                      <a qid="'ktp-'(i+2)" class="d-block" (click)="selectAPI(i)">{{api.name}}</a> 
+                  </li>
+              </ul>
+          </div>
+          <!-- User  Count -->
+          <div class="d-flex align-items-end mt-4">
+              <div class="input-group access-code-bar">
+                  <input qid="ktp-4" type="text" class="form-control" (input)="setGoButtonState()" placeholder="User Count" [(ngModel)]="userCount" aria-label="User Count" aria-describedby="basic-addon2">
+              </div>
+          </div>
+
+          <!-- GO button -->
+          <button qid="ktp-11" type="button" [ngClass]="goButtonDisabled?'disabled':''" class="btn btn-main-1 my-3 ml-1"
+              (click)="callAPI()">
+              Create User
+              <i class="fa fa-arrow-right ml-2" aria-hidden="true" *ngIf="!showLoader"></i>
+              <span *ngIf="showLoader" class="custom-loader ml-2">
+                  <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+          </button>
+      </section>
+
+      <section class="result-section my-4" *ngIf="responseJson">
+          <!-- JSON data viewer -->
+          <h2>Users List</h2>
+          <div class="json-viewer pl-2">
+              <ngx-json-viewer [json]="responseJson" class="json-data p-3"></ngx-json-viewer>
+          </div>
+      </section>
+  </div>
+</div>

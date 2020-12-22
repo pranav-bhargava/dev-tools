@@ -1,0 +1,114 @@
+
+.navbar {
+	background: rgb(135, 35, 255);
+	.navbar-brand{
+		color: #ffff;
+	}
+}
+.page-wrapper {
+	padding: 0 16px;
+	.welcome {
+		margin-top: 24px;
+		justify-content: space-between;
+		border-bottom: 1px solid var(--cup-general-color-3);
+		.welcome-msg {
+			color: var(--cup-general-color-5);
+			font-size: 48px;	
+			font-weight: 200;	
+			line-height: 56px;
+		}
+	}
+
+	.api-input-section {
+		max-width: 50%;;
+		.input-group {
+			border-bottom: solid 2px #8723ff;
+			.form-control {
+				color: var(--cup-general-color-5);
+				font-size: 16px;
+				border: 0 none;
+				background-color: #F5F5F5;
+				box-shadow: none;
+				border-radius: 2px 2px 0 0;
+				padding-right: 25px;
+				height: 46px;
+				&:placeholder {
+					color: #868e96;
+					opacity: 1;
+				}
+			}
+			&.dropdown-toggle {
+				cursor: pointer; 
+				.form-control {
+					cursor: pointer;
+				}
+			}
+		}
+		.api-dropdown {
+			.input-group-text {
+				background-color: #F5F5F5;
+				line-height: 1.95;
+				position: absolute;
+				border: 0 none;
+				right: 0;
+				i {
+					color: #8723ff;
+					font-size: 1.2em;
+				}
+			}
+			.dropdown-toggle:after {
+				display:none;
+			}
+			.dropdown-menu {
+				width: 100%;
+				box-shadow: 0 2px 24px -6px rgba(0, 0, 0, 0.5);
+				border: none;
+				.dropdown-item {
+					color: var(--cup-general-color-5);
+					font-size: 12px;
+					line-height: 16px;
+					padding: 0;
+					font-weight: 700;
+					a {
+						padding: 8px 24px;
+						&:active {
+							background-color: #FCF7E5;
+							box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.25);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.btn {
+		background-color: #8723ff;
+		border-radius: 16px;
+		padding: 8px 20px;
+		color: #ffff;
+	}
+	.no-resutls{
+		margin-left: 20px;
+		font-size: 14px;
+	}
+
+	.result-section {
+		h2 {
+			color: var(--cup-general-color-5);
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 1.4;
+			margin-bottom: 4px;
+		}
+		.json-viewer {
+			border: 1px solid var(--cup-general-color-3);
+		}
+	}
+
+	.disabled {
+		pointer-events: none;
+		opacity: 0.5;
+		cursor: default;
+	}	
+}
+
