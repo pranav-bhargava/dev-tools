@@ -1,9 +1,6 @@
-# Dev Tools
+# Create New Users
 
-Tools for use by Developers
+Tool to create and verify new users for IELTSi
 
-## Contents
-
-1. Create New Users Tool
 
 
