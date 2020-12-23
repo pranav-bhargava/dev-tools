@@ -66,6 +66,9 @@ async function creteUsr(email, signUpUrl) {
         });
         // Create an instance of the page
         const page = await browser.newPage();
+
+        await page.setDefaultNavigationTimeout(0);
+
         // Go to the web page that we want to scrap
         await page.goto(signUpUrl, {
             waitUntil: 'networkidle0'
