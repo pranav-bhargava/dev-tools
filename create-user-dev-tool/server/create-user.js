@@ -57,6 +57,7 @@ async function createUser(req, res) {
 async function creteUsr(email, signUpUrl) {
     // Launch the browser
     try {
+        console.log("In ceateUsr");
         const browser = await puppeteer.launch();
         // Create an instance of the page
         const page = await browser.newPage();
@@ -104,6 +105,7 @@ async function creteUsr(email, signUpUrl) {
         await browser.close();
         return email;
     } catch (err) {
-        res.send(err);
+        console.log("Error in creteUsr", err);
+        throw err;
     }
 }
