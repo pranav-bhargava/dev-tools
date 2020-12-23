@@ -39,7 +39,6 @@ async function createUser(req, res) {
     }
     try {
         let currentTimestamp = Date.now();
-        //console.log('req', req.query)
         const { environment, count } = req.query;
         const url = envConfig[environment];
         let promiseArray = []
@@ -74,11 +73,10 @@ async function creteUsr(email, signUpUrl) {
             document.querySelector("input#gigya-textbox-56649036382991330.gigya-input-text").value = "demo";
             document.querySelector("input#gigya-textbox-120640165044771760.gigya-input-text").value = "test"
             document.querySelector("input#learner-checkbox-1.gigya-input-checkbox.consentCheck").click();
-            document.querySelector("input#subscribe-checkbox-1.gigya-input-checkbox").click();
             [...document.querySelectorAll(".gigya-input-submit")].filter(ele => { return ele.value == "Sign up" })[0].click();
         }, email);
 
-        await page.waitFor(4000);
+        await page.waitFor(()=>document.querySelectorAll("div.v-email.font-weight-bold.d-inline").length > 0)
 
         await page.goto('http://www.yopmail.com/en/', {
             waitUntil: 'networkidle0'
@@ -97,7 +95,7 @@ async function creteUsr(email, signUpUrl) {
             return document.querySelectorAll('iframe')[2].contentWindow.document.body.querySelectorAll('a')[2].href
         });
 
-        console.log("Avinash", url);
+        console.log("Verification URL", url);
 
         await page.goto(url, {
             waitUntil: 'networkidle0'

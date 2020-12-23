@@ -12,7 +12,7 @@
           <!-- Select API dropdown -->
           <div class="dropdown api-dropdown">
               <div aria-expanded="false" aria-haspopup="true" class="input-group mb-2 dropdown-toggle" data-toggle="dropdown">
-                  <input qid="ktp-1" class="form-control form-control-lg" id="bundleType" name="bundleType" readonly="" required="" type="text" value="{{selectedApiFromDropdown}}" placeholder="Select the API">
+                  <input qid="ktp-1" class="form-control form-control-lg" id="bundleType" name="bundleType" readonly="" required="" type="text" value="{{selectedApiFromDropdown}}" placeholder="Select the Environment">
                   <div class="input-group-text arrow-group-text">
                       <i class="fa fa-caret-down"></i>
                   </div>
@@ -33,7 +33,7 @@
           <!-- GO button -->
           <button qid="ktp-11" type="button" [ngClass]="goButtonDisabled?'disabled':''" class="btn btn-main-1 my-3 ml-1"
               (click)="callAPI()">
-              Create User
+              Create User(s)
               <i class="fa fa-arrow-right ml-2" aria-hidden="true" *ngIf="!showLoader"></i>
               <span *ngIf="showLoader" class="custom-loader ml-2">
                   <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>

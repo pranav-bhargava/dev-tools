@@ -11,11 +11,11 @@ export class AppComponent implements OnInit{
   public userCount: number;
     apiCollection: Array<any> = [
         {
-            name: 'Create User for Thor',
+            name: 'Thor',
             environment: 'thor'
         },
         {
-            name: 'Create User for Qa',
+            name: 'QA',
             environment: 'qa'
         }
     ];
@@ -55,7 +55,6 @@ export class AppComponent implements OnInit{
             this.responseJson = res;
             this.showLoader = false;
             this.goButtonDisabled = false;
-            console.log('Avinash', res);
         }, (err)=> {
             this.goButtonDisabled = false;
             this.showLoader = false;
