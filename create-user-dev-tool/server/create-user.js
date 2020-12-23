@@ -58,7 +58,12 @@ async function creteUsr(email, signUpUrl) {
     // Launch the browser
     try {
         console.log("In ceateUsr");
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+            ],
+        });
         // Create an instance of the page
         const page = await browser.newPage();
         // Go to the web page that we want to scrap
