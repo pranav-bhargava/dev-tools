@@ -26,7 +26,7 @@
           <!-- User  Count -->
           <div class="d-flex align-items-end mt-4">
               <div class="input-group access-code-bar">
-                  <input qid="ktp-4" type="text" class="form-control" (input)="setGoButtonState()" placeholder="User Count" [(ngModel)]="userCount" aria-label="User Count" aria-describedby="basic-addon2">
+                  <input qid="ktp-4" type="number"  min="1" max="5" class="form-control" (input)="setGoButtonState()" placeholder="User Count" [(ngModel)]="userCount" aria-label="User Count" aria-describedby="basic-addon2">
               </div>
           </div>
 

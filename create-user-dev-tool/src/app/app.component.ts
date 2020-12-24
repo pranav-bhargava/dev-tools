@@ -62,6 +62,10 @@ export class AppComponent implements OnInit{
     }
 
     setGoButtonState() {
+        if(this.userCount > 5) {
+            this.goButtonDisabled = true;
+            return;
+        }
         this.goButtonDisabled = this.selectedAPI > -1 ? false : true;
     }
 }
